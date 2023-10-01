@@ -9,6 +9,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.GridPane;
+import javafx.scene.control.Label;
+
 
 public class MainController {
 
@@ -19,6 +21,9 @@ public class MainController {
     private boolean isGame = true;
 
     private int stepsCount = 0;
+
+    @FXML
+    private Label currentPlayer;
 
     @FXML
     private ResourceBundle resources;
@@ -46,15 +51,19 @@ public class MainController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Победитель " + btn.getText() + "!", ButtonType.OK);
             alert.showAndWait();
             isGame = false;
-        }
-        else if (!checkWin(currentSymbol) && stepsCount == 9){
+            currentPlayer.setText("Игра окончена");
+        } else if (!checkWin(currentSymbol) && stepsCount == 9) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Победителя нету, произошла ничья!", ButtonType.OK);
             alert.showAndWait();
             isGame = false;
         }
 
+        if (!checkWin(currentSymbol)) {
+            currentSymbol = currentSymbol == 'X' ? 'O' : 'X';
+            currentPlayer.setText(String.valueOf(currentSymbol));
+        }
 
-        currentSymbol = currentSymbol == 'X' ? 'O' : 'X';
+
     }
 
     @FXML

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="308.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tests.app.MainController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tests.app.MainController">
    <children>
       <GridPane prefHeight="400.0" prefWidth="308.0">
         <columnConstraints>
@@ -69,5 +69,15 @@
             </Button>
          </children>
       </GridPane>
+      <Label layoutX="336.0" layoutY="24.0" text="Текуший игрок" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="currentPlayer" layoutX="336.0" layoutY="67.0" text="X">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
